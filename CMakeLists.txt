@@ -122,3 +122,12 @@ if (BUILD_TESTING)
     add_subdirectory(tests)
 endif (BUILD_TESTING)
 
+set (RTAUDIO_LIBS rtaudio rtaudio_static)
+set (RTAUDIO_HEADERS RtAudio.h)
+
+install (TARGETS ${RTAUDIO_LIBS}
+         LIBRARY DESTINATION lib
+         ARCHIVE DESTINATION lib)
+
+install (FILES ${RTAUDIO_HEADERS}
+         DESTINATION include)
